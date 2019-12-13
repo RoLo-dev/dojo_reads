@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book Reviews</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="flex header">
+            <h1></h1>
+            <div class="header-links">
+                <a href="/books">Home</a>
+                <a href="/books/add">Add Book and Review</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+
+        <div class="main-content user-info">
+            <p><span class="bold">User Alias:</span> </p>
+            <p><span class="bold">Name:</span> </p>
+            <p><span class="bold">Email:</span> </p>
+            <p><span class="bold">Total Reviews:</span> </p>
+
+            <div class="post-count">
+                <h4>Posted Reviews on the following books:</h4>
+                <ul class="link-review">
+                    <li><a href="#"> title of book </a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

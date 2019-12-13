@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book Reviews</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="flex header">
+            <h1>Welcome, {{ user.first_name }}</h1>
+            <div class="header-links">
+                <a href="/books/add">Add Book and Review</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        
+        <div class="main-content flex">
+
+            <div class="col-1">
+                <h3>Recent Book Reviews</h3>
+
+                <div class="reviews-box">
+                    {% for review in recent_reviews %}
+                    <div class="full-review">
+                        <h4><a href="/books/{{ review.book.id }}" class="review-title">{{ review.book.title }}</a></h4>
+                        <p>Rating: {{ review.rating }}</p>
+                        <p><a href="/users/{{ review.user.id }}">{{ review.user.first_name }}</a> says: {{ review.comment }} </p>
+                        <p class="post-date">Posted on {{ review.created_at | date:"F d, Y" }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+            <div class="col-2">
+                <h3>Other Books with Reviews</h3>
+                <div class="reviews-box">
+                    <ul class="link-review">
+                        {% for review in reviews %}
+                        <li><a href="/books/{{ review.book.id }}">{{ review.book.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

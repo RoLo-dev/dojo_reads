@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header,
+.home-title{
+    margin-top: 3rem;
+}
+html{
+    font-size: 18px;
+}
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+.main-content{
+    margin-top: 5rem;
+}
+.bold{
+    font-weight: bold;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+.flex-around{
+    display: flex;
+    justify-content: space-around;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+h3{
+    margin-bottom: 1.5rem;
+}
+input{
+    margin-bottom: 1rem;
+    width: 25rem;
+    height: 1.5rem;
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid #000;
+    transition: all 0.9s;
+}
+input:hover{
+    background-color: #E8E8E8;
+    border-color: rgb(143, 143, 143);
+    transition: all 0.3s;
+}
+.form-btn{
+    display: block;
+    width: 40%;
+    font-size: 0.8rem;
+    letter-spacing: 0.85px;
+    border: 1px solid #000;
+    cursor: pointer;
+    transition: all 0.9s;
+}
+.form-btn:hover{
+    background-color: #000;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.header .header-links a{
+    margin-right: 10px;
+    color: #000;
+    text-decoration: none;
+    transition: all 0.9s;
+    font-weight: 100;
+}
+.header .header-links a:hover{
+    color: #E24E1B;
+    transition: all 0.3s;
+}
+
+/* styling of reviews */
+.col-1{
+    width: 50%;
+}
+.reviews-box{
+    overflow: scroll;
+}
+.full-review>*{
+    margin-bottom: 8px;
+}
+.full-review{
+    margin-bottom: 2rem;
+}
+
+.col-2{
+    width: 35%;
+}
+.link-review li{
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+/* Adding book and review form */
+.add-form{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.add-form form label{
+    font-size: 15px;
+}
+.add-form form select{
+    width: 40%;
+    margin: 10px 0;
+}
+.add-form textarea{
+    outline: 0;
+    border: 1px solid #000;
+    width: 52%;
+    height: 20rem;
+    margin: 12px 0;
+}
+.add-form textarea::placeholder,
+.book-info textarea::placeholder{
+    padding: 5px 0 0 5px;
+}
+.add-form #rating{
+    width: 5%;
+}
+
+/* Book info */
+.post-date{
+    font-style: italic;
+    font-size: 15px;
+}
+.book-info textarea{
+    height: 20rem;
+    border: 1px solid #000;
+    margin-bottom: 12px;
+}
+.book-info select{
+    width: 7%;
+    margin: 12px 0 1rem 0;
+}
+
+/* user info page */
+.user-info p{
+    margin-bottom: 12px;
+}
+.post-count{
+    margin-top: 7rem;
+}
+.post-count h4{
+    margin-bottom: 1rem;
+}

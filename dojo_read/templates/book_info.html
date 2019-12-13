@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book Reviews</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="flex header">
+            <h1></h1>
+            <div class="header-links">
+                <a href="/books">Home</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <div class="book-info">
+            <h3>Book Title: {{ book.title }}</h3>
+            <h5>Author: {{ book.author }}</h5>
+        </div>
+
+        <div class="flex main-content">
+
+            <div class="col-1">
+                <h3>Reviews:</h3>
+
+                <div class="reviews-box">
+                    <div class="full-review">
+                        <p>Rating: {{ review.rating }}</p>
+                        <p><a href="#">Name of user</a> </p>
+                        <p class="post-date">Posted on</p>
+                    </div>
+                </div>
+
+                <a href="#"> Delete this Review</a>
+            </div>
+
+            <div class="col-2">
+                <h3>Add a Review</h3>
+                <form action="" class="flex-col book-info" method="POST">
+                    {% csrf_token %}
+                    <textarea name="review" placeholder="Write a review"></textarea>
+                    <label>Rating:</label>
+                    <select name="rating"">
+                        <option value="">--</option>
+                        <option value="one">1</option>
+                        <option value="two">2</option>
+                        <option value="three">3</option>
+                        <option value="four">4</option>
+                        <option value="five">5</option>
+                    </select>
+                    <input type="submit" class="form-btn bold" value="Add Review">
+                </form>
+            </div>
+
+
+        </div>
+
+    </div>
+</body>
+</html>

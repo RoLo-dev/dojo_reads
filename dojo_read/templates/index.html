@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book Reviews</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="flex">
+            <h1 id="home-title">Welcome to Dojo Reads</h1>
+            <div class="credentials">
+                {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                    <li> {{ message }} </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="main-content flex-around">
+
+            <div id="form-1">
+                <h3>Register</h3>
+                <form action="/register" class="flex-col" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="name" placeholder="Name">
+                    <input type="text" name="alias" placeholder="Alias">
+                    <input type="text" name="email" placeholder="Email">
+                    <input type="password" name="password" placeholder="Password">
+                    <input type="password" name="pw_check" placeholder="Confirm password">
+                    <input type="submit" class="form-btn bold" value="Register">
+                </form>
+            </div>
+
+            <div id="form-2">
+                <h3>Login</h3>
+                <form action="/login" class="flex-col" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="email" placeholder="Email">
+                    <input type="password" name="password" placeholder="Password">
+                    <input type="submit" class="form-btn bold" value="Login">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
